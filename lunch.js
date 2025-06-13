@@ -14,22 +14,34 @@
  */
 
 const whatToDoForLunch = function(hungry, availableTime) {
-    console.log("I don't know what to do!");
+  console.log("I don't know what to do!");
+
+  let notHungry = "Wait until you're hungry.";
+  let quickSnack = "Pick up a snack or grab something you have ready at home.";
+  let takeABreak = "You deserve a break and should take time to cook a meal!";
+  let reconsider = "This is an intense program! You should probably reconsider.";
 
   if (!hungry) {
-    console.log("Wait until you're hungry.");
-  } else if (availableTime < 20) {
-    console.log( "Pick up a snack or grab something you have ready at home.");
-  } else if (availableTime <= 30) {
-    console.log( "You deserve a break and should take time to cook a meal!");
+    console.log(notHungry);
+    return;
   }
-  else {
-  console.log("This is an intense program! You should probably reconsider.")
- } 
 
-
- 
+  if (availableTime < 20) {
+    console.log(quickSnack);
+    return;
   }
+
+  if (availableTime <= 30) {
+    console.log(takeABreak);
+    return;
+  }
+
+  if (availableTime > 30) {
+    console.log(reconsider);
+    return;
+  }
+
+};
 
 /*
  * This is some test runner code that's simply calling our whatToDoForLunch function
